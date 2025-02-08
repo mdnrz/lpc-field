@@ -1,0 +1,16 @@
+SHARED_DIR = $(SRC_DIR)/shared
+CMSIS_DIR = $(SHARED_DIR)/cmsis
+CMSIS_INC_CORE_DEVICE = $(CMSIS_DIR)/Core/Device/NXP/LPC17xx/Include 
+CMSIS_INC_CORE_CMSIS = $(CMSIS_DIR)/Core/CMSIS/Include
+CMSIS_INC_DRIVERS = $(CMSIS_DIR)/Drivers/include
+
+# Modules
+DRIVERS_SRC_C = $(wildcard $(SHARED_DIR)/cmsis/Drivers/source/*.c)
+DRIVERS_SRC_S = $(wildcard $(SHARED_DIR)/cmsis/Drivers/source/*.s)
+
+UTILS_SRC = 
+
+SHARED_SRC_C = $(DRIVERS_SRC_C) $(UTILS_SRC)
+SHARED_SRC_S = $(DRIVERS_SRC_S)
+SHARED_INC = -I$(CMSIS_INC_CORE_DEVICE) -I$(CMSIS_INC_DRIVERS) -I$(CMSIS_INC_CORE_CMSIS)
+

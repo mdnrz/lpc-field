@@ -1,0 +1,12 @@
+bin/
+*.elf
+*.bin
+*.o
+*.d
+*.map
+generated.*.ld
+build/*
+.cache/*
+globals/version.c
+tags
+compile_commands.json
